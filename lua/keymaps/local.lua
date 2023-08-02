@@ -6,6 +6,10 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- Set Leader
+
+vim.g.mapleader = " "
+
 -- Vim for Colemak
 map("", "n", "j", {})
 map("", "e", "k", {})
@@ -31,7 +35,7 @@ map("n", "P", '"+p', {})
 
 -- Some functional configuration
 map("n", "<backspace>", "<cmd>noh<cr>", {}) -- cancel highlight that from search
-map("n", "<space>", "viw", {}) -- select a word
+map("n", "<leader><leader>", "viw", {}) -- select a word
 map("n", "-", "@q", {}) -- play the macro 'q'
 map("n", "<c-a>", "gg<s-v>G", {}) -- select all
 map("n", "f", "<c-w>w", {}) -- change window

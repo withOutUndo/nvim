@@ -17,6 +17,11 @@ require("mason-lspconfig").setup_handlers({
 local luasnip = require("luasnip")
 local loader = require("luasnip.loaders.from_vscode")
 local cmp = require("cmp")
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
 loader.lazy_load()
 cmp.setup({
   snippet = {

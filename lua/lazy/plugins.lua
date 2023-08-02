@@ -62,13 +62,6 @@ return {
   { "numToStr/Comment.nvim" },
   { "nvim-tree/nvim-tree.lua" },
   { "romgrk/barbar.nvim" },
-  {
-    "tami5/lspsaga.nvim",
-    event = "LspAttach",
-    init = function()
-      require("lspsaga").setup()
-    end,
-  },
   { "voldikss/vim-floaterm" },
   { "iamcco/markdown-preview.nvim", ft = { "markdown" }, event = "VeryLazy" },
   { "lukas-reineke/indent-blankline.nvim" },
@@ -97,5 +90,10 @@ return {
       "theHamsta/nvim-dap-virtual-text",
       "nvim-telescope/telescope-dap.nvim",
     },
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
   },
 }

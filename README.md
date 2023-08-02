@@ -1,3 +1,5 @@
+# fork from [zaiic/nvim](https://github.com/zaiic/nvim.git)
+
 <div align="center">
     <h1>Neovim for Colemak</h1>
     <span>with <a href="https://github.com/folke/lazy.nvim">lazy.nvim</a></span>
