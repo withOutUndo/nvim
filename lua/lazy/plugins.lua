@@ -1,13 +1,11 @@
 return {
   {
-    -- Theme
-    "rose-pine/neovim",
-    name = "rose-pine",
-    priority = 1000,
+    "folke/tokyonight.nvim",
     lazy = false,
+    priority = 1000,
     init = function()
-      vim.cmd([[colorscheme rose-pine]])
-    end,
+      vim.cmd[[colorscheme tokyonight]]
+    end
   },
   {
     "williamboman/mason.nvim",
@@ -96,4 +94,25 @@ return {
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
   },
+  {
+    "Dhanus3133/LeetBuddy.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("leetbuddy").setup({
+        language = "js",
+        domain = "cn"
+      })
+    end,
+    keys = {
+      { "<leader>lq", "<cmd>LBQuestions<cr>", desc = "List Questions" },
+      { "<leader>ld", "<cmd>LBDaily<cr>", desc = "Start Daily Question" },
+      { "<leader>ll", "<cmd>LBQuestion<cr>", desc = "View Question" },
+      { "<leader>lr", "<cmd>LBReset<cr>", desc = "Reset Code" },
+      { "<leader>lt", "<cmd>LBTest<cr>", desc = "Run Code" },
+      { "<leader>ls", "<cmd>LBSubmit<cr>", desc = "Submit Code" },
+    },
+  }
 }
