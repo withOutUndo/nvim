@@ -4,8 +4,8 @@ return {
     lazy = false,
     priority = 1000,
     init = function()
-      vim.cmd[[colorscheme tokyonight]]
-    end
+      vim.cmd([[colorscheme tokyonight]])
+    end,
   },
   {
     "williamboman/mason.nvim",
@@ -31,6 +31,10 @@ return {
     },
   },
   { "jay-babu/mason-null-ls.nvim" },
+  {
+    "mhartington/formatter.nvim",
+    config = function() end,
+  },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = {
@@ -90,9 +94,9 @@ return {
     },
   },
   {
-    'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
     event = "InsertEnter",
-    opts = {} -- this is equalent to setup({}) function
+    opts = {}, -- this is equalent to setup({}) function
   },
   {
     "Dhanus3133/LeetBuddy.nvim",
@@ -103,7 +107,7 @@ return {
     config = function()
       require("leetbuddy").setup({
         language = "js",
-        domain = "cn"
+        domain = "cn",
       })
     end,
     keys = {
@@ -119,41 +123,42 @@ return {
     "smoka7/multicursors.nvim",
     event = "VeryLazy",
     dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'smoka7/hydra.nvim',
+      "nvim-treesitter/nvim-treesitter",
+      "smoka7/hydra.nvim",
     },
     opts = function()
-      local N = require 'multicursors.normal_mode'
-      local I = require 'multicursors.insert_mode'
+      local N = require("multicursors.normal_mode")
+      local I = require("multicursors.insert_mode")
       return {
         normal_keys = {
           -- to change default lhs of key mapping change the key
-          [','] = {
+          [","] = {
             -- assigning nil to method exits from multi cursor mode
             method = N.clear_others,
             -- you can pass :map-arguments here
-            opts = { desc = 'Clear others' },
+            opts = { desc = "Clear others" },
           },
         },
         insert_keys = {
           -- to change default lhs of key mapping change the key
-          ['<CR>'] = {
+          ["<CR>"] = {
             -- assigning nil to method exits from multi cursor mode
             method = I.Cr_method,
             -- you can pass :map-arguments here
-            opts = { desc = 'New line' },
+            opts = { desc = "New line" },
           },
         },
       }
     end,
-    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+    cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
     keys = {
       {
-        mode = { 'v', 'n' },
-        '<Leader>m',
-        '<cmd>MCstart<cr>',
-        desc = 'Create a selection for selected text or word under the cursor',
+        mode = { "v", "n" },
+        "<Leader>m",
+        "<cmd>MCstart<cr>",
+        desc = "Create a selection for selected text or word under the cursor",
       },
     },
-  }
+  },
+  { "simrat39/rust-tools.nvim" },
 }
