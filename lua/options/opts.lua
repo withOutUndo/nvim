@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+vim.api.nvim_set_option("clipboard","unnamed")
+
 opt.relativenumber = true
 opt.number = true
 opt.tabstop = 4

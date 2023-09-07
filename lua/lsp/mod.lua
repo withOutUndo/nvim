@@ -40,6 +40,7 @@ cmp.setup({
     { name = "path" },
     { name = "nvim_lua" },
     { name = "luasnip" },
+    { name = "emmet_vim" },
   },
   mapping = cmp.mapping.preset.insert({
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),

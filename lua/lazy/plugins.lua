@@ -45,6 +45,10 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
   },
+  { "mattn/emmet-vim" },
+  {
+    "dcampos/cmp-emmet-vim",
+  },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -161,4 +165,6 @@ return {
     },
   },
   { "simrat39/rust-tools.nvim" },
+  -- lazy.nvim
+  { "xlboy/swap-ternary.nvim" },
 }

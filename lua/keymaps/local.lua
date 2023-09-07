@@ -64,3 +64,9 @@ map("t", "<Esc>", "<C-\\><C-n>", {})
 
 -- Format
 map("n", "<C-I>", "<cmd>Format<CR>", {})
+
+-- Save
+map("n", "<C-s>", "<cmd>wa<CR>", {})
+
+-- Start cmd
+map("n", ";", ":", {})
